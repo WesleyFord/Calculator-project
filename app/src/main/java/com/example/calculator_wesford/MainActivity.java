@@ -4,8 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private Button clearEntryBtn;
@@ -29,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private Button equalsBtn;
 
     private TextView outputTxt;
+    private Spinner pastEquations;
+    private ArrayAdapter<String> equationsList;
+    ArrayList<String> equationsArray;
 
     private double valueOne;
     private double valueTwo;
@@ -67,7 +75,26 @@ public class MainActivity extends AppCompatActivity {
 
         outputTxt = findViewById(R.id.outputText);
 
+        pastEquations = findViewById(R.id.pastEquations);
+        equationsArray = new ArrayList<String>();
+        equationsList = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, equationsArray);
+
+        pastEquations.setAdapter(equationsList);
+
         outputTxt.setText("0");
+
+        pastEquations.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                outputTxt.setText(parent.getItemAtPosition(position).toString().split(" = ")[1]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         clearEntryBtn.setOnClickListener(calcClickListener);
         clearAllBtn.setOnClickListener(calcClickListener);
@@ -239,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
                             else {
                                 outputTxt.setText(String.format("%s", solution));
                             }
+                            equationsList.add(valueOne + " + " + valueTwo + " = " + solution);
                             break;
                         case "subtract":
                             solution = valueOne - valueTwo;
@@ -248,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
                             else {
                                 outputTxt.setText(String.format("%s", solution));
                             }
+                            equationsList.add(valueOne + " - " + valueTwo + " = " + solution);
                             break;
                         case "multiply":
                             solution = valueOne * valueTwo;
@@ -257,6 +286,7 @@ public class MainActivity extends AppCompatActivity {
                             else {
                                 outputTxt.setText(String.format("%s", solution));
                             }
+                            equationsList.add(valueOne + " * " + valueTwo + " = " + solution);
                             break;
                         case "divide":
                             if (valueTwo == 0) {
@@ -270,6 +300,7 @@ public class MainActivity extends AppCompatActivity {
                                 else {
                                     outputTxt.setText(String.format("%s", solution));
                                 }
+                                equationsList.add(valueOne + " / " + valueTwo + " = " + solution);
                             }
                             break;
                         default:
@@ -280,10 +311,12 @@ public class MainActivity extends AppCompatActivity {
                             else {
                                 outputTxt.setText(String.format("%s", solution));
                             }
+                            equationsList.add(solution + " = " + solution);
                             break;
                     }
                     completedOperation = true;
                     readyForNextValue =false;
+
                     operation = "";
                     break;
                 case R.id.clearEntryBtn:
@@ -296,6 +329,7 @@ public class MainActivity extends AppCompatActivity {
                     readyForNextValue =false;
                     completedOperation = false;
                     hasDecimal = false;
+                    equationsList.clear();
                     break;
             }
         }
@@ -312,6 +346,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putBoolean("hasDecimal", hasDecimal);
         outState.putBoolean("completedOperation", completedOperation);
         outState.putBoolean("readyForNextValue", readyForNextValue);
+        outState.putStringArrayList("equationsList", equationsArray);
     }
 
     @Override
@@ -325,5 +360,6 @@ public class MainActivity extends AppCompatActivity {
         hasDecimal = savedInstanceState.getBoolean("hasDecimal", hasDecimal);
         completedOperation = savedInstanceState.getBoolean("completedOperation", completedOperation);
         readyForNextValue = savedInstanceState.getBoolean("readyForNextValue", readyForNextValue);
+        equationsList.addAll(savedInstanceState.getStringArrayList("equationsList"));
     }
 }

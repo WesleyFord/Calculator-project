@@ -9,9 +9,9 @@
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="463dp"
-        android:layout_height="362dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="472dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="92dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -157,8 +157,8 @@
 
     <TextView
         android:id="@+id/outputText"
-        android:layout_width="365dp"
-        android:layout_height="93dp"
+        android:layout_width="457dp"
+        android:layout_height="90dp"
         android:layout_marginTop="12dp"
         android:textAlignment="textEnd"
         android:textSize="70sp"

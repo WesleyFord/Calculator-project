@@ -300,4 +300,30 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+
+    @Override
+    protected void onSaveInstanceState(final Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString("outputTxt", outputTxt.getText().toString());
+        outState.putString("operation", operation);
+        outState.putDouble("valueOne", valueOne);
+        outState.putDouble("valueTwo", valueTwo);
+        outState.putBoolean("hasDecimal", hasDecimal);
+        outState.putBoolean("completedOperation", completedOperation);
+        outState.putBoolean("readyForNextValue", readyForNextValue);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(final Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        outputTxt.setText(savedInstanceState.getString("outputTxt"));
+        operation = savedInstanceState.getString("operation", operation);
+        valueOne = savedInstanceState.getDouble("valueOne", valueOne);
+        valueTwo = savedInstanceState.getDouble("valueTwo", valueTwo);
+        hasDecimal = savedInstanceState.getBoolean("hasDecimal", hasDecimal);
+        completedOperation = savedInstanceState.getBoolean("completedOperation", completedOperation);
+        readyForNextValue = savedInstanceState.getBoolean("readyForNextValue", readyForNextValue);
+    }
 }

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Calculator_WesFord</string>
+    <string name="clearEntryBtnTxt">C</string>
+    <string name="clearAllBtnTxt">CE</string>
+    <string name="invertBtnTxt">+/-</string>
+    <string name="divBtnTxt">/</string>
+    <string name="sevenBtnTxt">7</string>
+    <string name="eightBtnTxt">8</string>
+    <string name="nineBtnTxt">9</string>
+    <string name="addBtnTxt">+</string>
+    <string name="fourBtnTxt">4</string>
+    <string name="fiveBtnTxt">5</string>
+    <string name="sixBtnTxt">6</string>
+    <string name="subtractBtnTxt">-</string>
+    <string name="oneBtnTxt">1</string>
+    <string name="twoBtnTxt">2</string>
+    <string name="threeBtnTxt">3</string>
+    <string name="multBtnTxt">*</string>
+    <string name="zeroBtnTxt">0</string>
+    <string name="decimalBtnTxt">.</string>
+    <string name="equalsBtnTxt">=</string>
+</resources>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="370dp"
+        android:layout_height="457dp"
+        android:layout_marginTop="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:useDefaultMargins="true">
+
+        <Button
+            android:id="@+id/clearEntryBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/clearEntryBtnTxt"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/clearAllBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/clearAllBtnTxt" />
+
+        <Button
+            android:id="@+id/invertBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/invertBtnTxt" />
+
+        <Button
+            android:id="@+id/divBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/divBtnTxt" />
+
+        <Button
+            android:id="@+id/sevenBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/sevenBtnTxt"
+            app:layout_column="0"
+            app:layout_row="1" />
+
+        <Button
+            android:id="@+id/eightBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/eightBtnTxt" />
+
+        <Button
+            android:id="@+id/nineBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/nineBtnTxt" />
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/addBtnTxt" />
+
+        <Button
+            android:id="@+id/fourBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/fourBtnTxt"
+            app:layout_column="0"
+            app:layout_row="2" />
+
+        <Button
+            android:id="@+id/fiveBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/fiveBtnTxt" />
+
+        <Button
+            android:id="@+id/sixBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/sixBtnTxt" />
+
+        <Button
+            android:id="@+id/subtractBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/subtractBtnTxt" />
+
+        <Button
+            android:id="@+id/oneBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/oneBtnTxt"
+            app:layout_column="0"
+            app:layout_row="3" />
+
+        <Button
+            android:id="@+id/twoBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/twoBtnTxt" />
+
+        <Button
+            android:id="@+id/threeBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/threeBtnTxt" />
+
+        <Button
+            android:id="@+id/multBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/multBtnTxt"
+            app:layout_column="3"
+            app:layout_row="3" />
+
+        <Button
+            android:id="@+id/zeroBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/zeroBtnTxt"
+            app:layout_column="0"
+            app:layout_row="4" />
+
+        <Button
+            android:id="@+id/decimalBtn"
+            android:layout_width="85dp"
+            android:layout_height="80dp"
+            android:text="@string/decimalBtnTxt" />
+
+        <Button
+            android:id="@+id/equalsBtn"
+            android:layout_width="178dp"
+            android:layout_height="80dp"
+            android:text="@string/equalsBtnTxt"
+            app:layout_columnSpan="100" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/outputText"
+        android:layout_width="365dp"
+        android:layout_height="93dp"
+        android:textAlignment="textEnd"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.121" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
